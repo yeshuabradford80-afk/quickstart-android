@@ -1,13 +1,17 @@
 # quickstart-android
-## GCX++++
+* GCX++++
+
 ```npm install ethereum-identity-kitnpm install ethereum-identity-kit wagmi viem@2.x @tanstack/react-queryimport { WagmiProvider } from 'wagmi'
-import { wagmiConfig } from '#/lib/wagmi'
-import { TransactionProvider } from 'ethereum-identity-kit'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+* import { wagmiConfig } from '#/lib/wagmi'
+
+* import { TransactionProvider } from 'ethereum-identity-kit'
+
+* import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
  
 const queryClient = new QueryClient()
  
-export default function App({ Component, pageProps }: AppProps) {
+## export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <WagmiProvider config={wagmiConfig}>
@@ -17,22 +21,26 @@ export default function App({ Component, pageProps }: AppProps) {
       </WagmiProvider>
     </QueryClientProvider>
   )
-}import { ProfileCard } from 'ethereum-identity-kit'
+}
+* import { ProfileCard } from 'ethereum-identity-kit'
  
 export default function Home() {
   return <ProfileCard addressOrName="vitalik.eth" />
   // or 0x983110309620d911731ac0932219af06091b6744
 }import 'ethereum-identity-kit/css'transpilePackages: ['ethereum-identity-kit'],ssr: {
   noExternal: ['ethereum-identity-kit'],
-},import { FullWidthProfile } from 'ethereum-identity-kit'
+},
+* import { FullWidthProfile } from 'ethereum-identity-kit'
  
 export default function Home() {
   return <FullWidthProfile addressOrName="cottons.eth" />
-}import { ProfileCard } from 'ethereum-identity-kit'
+}
+* import { ProfileCard } from 'ethereum-identity-kit'
  
 export default function Home() {
   return <ProfileCard addressOrName="vitalik.eth" />
-}import { ProfileTooltip } from 'ethereum-identity-kit'
+}
+* import { ProfileTooltip } from 'ethereum-identity-kit'
  
 export default function Home() {
   return (
@@ -40,7 +48,9 @@ export default function Home() {
       <span>Hover over me to see profile</span>
     </ProfileTooltip>
   )
-}# ethidentitykit.com llms.txt
+}
+
+# ethidentitykit.com llms.txt
 
 > Ethereum Identity Kit facilitates the integration of Ethereum identity features into applications via a React component library, providing developers with tools and documentation for user profile management and on-chain transactions.
 
@@ -154,7 +164,7 @@ export default function Home() {
 
 # useFollowButton
 
-The `useFollowButton` hook manages the state and actions for a follow button component. It determines the current follow state between a `lookupAddress` and a `connectedAddress`, and provides functions to handle follow, unfollow, block, and mute actions.
+** The `useFollowButton` hook manages the state and actions for a follow button component. It determines the current follow state between a `lookupAddress` and a `connectedAddress`, and provides functions to handle follow, unfollow, block, and mute actions.
 
 ### Add to your project
 
@@ -489,13 +499,14 @@ addTransactions(txs)
 
 ### `addListOpsTransaction`
 
-**Description**:  
+** Description**:  
 A function to add a list operations to pending transactions. This is handled by the Follow Button component, however you can use it to add a list operations transaction manually.
 
-**Example**:
+** Example**:
 
 ```tsx
-import {
+
+* import {
   useTransactions,
   listOpAddListRecord,
   listOpRemoveListRecord,
