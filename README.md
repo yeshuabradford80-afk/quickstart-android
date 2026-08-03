@@ -1,6 +1,6 @@
 # quickstart-android
-GCX++++
-npm install ethereum-identity-kitnpm install ethereum-identity-kit wagmi viem@2.x @tanstack/react-queryimport { WagmiProvider } from 'wagmi'
+## GCX++++
+```npm install ethereum-identity-kitnpm install ethereum-identity-kit wagmi viem@2.x @tanstack/react-queryimport { WagmiProvider } from 'wagmi'
 import { wagmiConfig } from '#/lib/wagmi'
 import { TransactionProvider } from 'ethereum-identity-kit'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
