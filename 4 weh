@@ -1,0 +1,9 @@
+import Cloudflare from 'cloudflare';
+
+const client = new Cloudflare({
+  apiToken: process.env['CLOUDFLARE_API_TOKEN'], // This is the default and can be omitted
+});
+
+const response = await client.radar.quality.iqi.summary({ metric: 'BANDWIDTH' });
+
+console.log(response.meta);
