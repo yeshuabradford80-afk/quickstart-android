@@ -1,23 +1,22 @@
-Skip to content
+## Skip to content
 
-Cloudflare API
+## Cloudflare API
 
 
-API Reference
+## API Reference
 
-Copy Markdown
+##:Copy Markdown
 
-AI
-Execute AI model
-POST
-/accounts/{account_id}/ai/run/{model_name}
+* AI
+* Execute AI model
+* POST/accounts/{account_id}/ai/run/{model_name}
 Models
-AIRunResponse = array of object or string or object or 12 more
-An array of classification results for the input text
+* AIRunResponse = array of object or string or object or 12 more
+* An array of classification results for the input text
 
-AIFinetunes
-List Finetunes
-GET
+** AIFinetunes
+** List Finetunes
+``GET
 /accounts/{account_id}/ai/finetunes
 Create a new Finetune
 POST
