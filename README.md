@@ -1,3 +1,286 @@
+## Get Internet Quality Index (IQI) summary
+
+`client.Radar.Quality.IQI.Summary(ctx, query) (*QualityIQISummaryResponse, error)`
+
+**get** `/radar/quality/iqi/summary`
+
+Retrieves a summary (percentiles) of bandwidth, latency, or DNS response time from the Radar Internet Quality Index (IQI).
+
+### Parameters
+
+- `query QualityIQISummaryParams`
+
+  - `Metric param.Field[QualityIQISummaryParamsMetric]`
+
+    Defines which metric to return (bandwidth, latency, or DNS response time).
+
+    - `const QualityIQISummaryParamsMetricBandwidth QualityIQISummaryParamsMetric = "BANDWIDTH"`
+
+    - `const QualityIQISummaryParamsMetricDNS QualityIQISummaryParamsMetric = "DNS"`
+
+    - `const QualityIQISummaryParamsMetricLatency QualityIQISummaryParamsMetric = "LATENCY"`
+
+  - `ASN param.Field[[]string]`
+
+    Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with `-` to exclude ASNs from results. For example, `-174, 3356` excludes results from AS174, but includes results from AS3356.
+
+  - `Continent param.Field[[]string]`
+
+    Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.
+
+  - `DateEnd param.Field[[]Time]`
+
+    End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.
+
+  - `DateRange param.Field[[]string]`
+
+    Filters results by relative date range ending at the current time, with each value producing a separate series. Use `<n>d` for days (up to `364d`) or `<n>w` for weeks (up to `52w`). Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window's length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `7dcontrol` covers days -14 to -7, `10dcontrol` covers days -24 to -14). For example, pass `7d` and `7dcontrol` to compare this week with the previous week. All series must resolve to the same duration as the main series; relative ranges (including `control`) satisfy this automatically. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).
+
+  - `DateStart param.Field[[]Time]`
+
+    Start of the date range. Alternative to `dateRange`; provide together with `dateEnd`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.
+
+  - `Format param.Field[QualityIQISummaryParamsFormat]`
+
+    Format in which results will be returned.
+
+    - `const QualityIQISummaryParamsFormatJson QualityIQISummaryParamsFormat = "JSON"`
+
+    - `const QualityIQISummaryParamsFormatCsv QualityIQISummaryParamsFormat = "CSV"`
+
+  - `Location param.Field[[]string]`
+
+    Filters results by location. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude locations from results. For example, `-US,PT` excludes results from the US, but includes results from PT.
+
+  - `Name param.Field[[]string]`
+
+    Array of names used to label the series in the response.
+
+### Returns
+
+- `type QualityIQISummaryResponse struct{…}`
+
+  - `Meta QualityIQISummaryResponseMeta`
+
+    Metadata for the results.
+
+    - `ConfidenceInfo QualityIQISummaryResponseMetaConfidenceInfo`
+
+      - `Annotations []QualityIQISummaryResponseMetaConfidenceInfoAnnotation`
+
+        - `DataSource QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource`
+
+          Data source for annotations.
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceAll QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "ALL"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceAIBots QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "AI_BOTS"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceAIGateway QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "AI_GATEWAY"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceBGP QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "BGP"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceBots QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "BOTS"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceConnectionAnomaly QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "CONNECTION_ANOMALY"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceCT QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "CT"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceDNS QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "DNS"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceDNSMagnitude QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "DNS_MAGNITUDE"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceDNSAS112 QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "DNS_AS112"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceDos QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "DOS"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceEmailRouting QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "EMAIL_ROUTING"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceEmailSecurity QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "EMAIL_SECURITY"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceFw QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "FW"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceFwPg QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "FW_PG"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceHTTP QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "HTTP"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceHTTPControl QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "HTTP_CONTROL"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceHTTPCrawlerReferer QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "HTTP_CRAWLER_REFERER"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceHTTPOrigins QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "HTTP_ORIGINS"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceIQI QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "IQI"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceLeakedCredentials QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "LEAKED_CREDENTIALS"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceNet QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "NET"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceRobotsTXT QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "ROBOTS_TXT"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceSpeed QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "SPEED"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSourceWorkersAI QualityIQISummaryResponseMetaConfidenceInfoAnnotationsDataSource = "WORKERS_AI"`
+
+        - `Description string`
+
+        - `EndDate Time`
+
+        - `EventType QualityIQISummaryResponseMetaConfidenceInfoAnnotationsEventType`
+
+          Event type for annotations.
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsEventTypeEvent QualityIQISummaryResponseMetaConfidenceInfoAnnotationsEventType = "EVENT"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsEventTypeGeneral QualityIQISummaryResponseMetaConfidenceInfoAnnotationsEventType = "GENERAL"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsEventTypeOutage QualityIQISummaryResponseMetaConfidenceInfoAnnotationsEventType = "OUTAGE"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsEventTypePartialProjection QualityIQISummaryResponseMetaConfidenceInfoAnnotationsEventType = "PARTIAL_PROJECTION"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsEventTypePipeline QualityIQISummaryResponseMetaConfidenceInfoAnnotationsEventType = "PIPELINE"`
+
+          - `const QualityIQISummaryResponseMetaConfidenceInfoAnnotationsEventTypeTrafficAnomaly QualityIQISummaryResponseMetaConfidenceInfoAnnotationsEventType = "TRAFFIC_ANOMALY"`
+
+        - `IsInstantaneous bool`
+
+          Whether event is a single point in time or a time range.
+
+        - `LinkedURL string`
+
+        - `StartDate Time`
+
+        - `Tags []string`
+
+      - `Level int64`
+
+        Provides an indication of how much confidence Cloudflare has in the data.
+
+    - `DateRange []QualityIQISummaryResponseMetaDateRange`
+
+      - `EndTime Time`
+
+        Adjusted end of date range.
+
+      - `StartTime Time`
+
+        Adjusted start of date range.
+
+    - `LastUpdated Time`
+
+      Timestamp of the last dataset update.
+
+    - `Normalization QualityIQISummaryResponseMetaNormalization`
+
+      Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+
+      - `const QualityIQISummaryResponseMetaNormalizationPercentage QualityIQISummaryResponseMetaNormalization = "PERCENTAGE"`
+
+      - `const QualityIQISummaryResponseMetaNormalizationMin0Max QualityIQISummaryResponseMetaNormalization = "MIN0_MAX"`
+
+      - `const QualityIQISummaryResponseMetaNormalizationMinMax QualityIQISummaryResponseMetaNormalization = "MIN_MAX"`
+
+      - `const QualityIQISummaryResponseMetaNormalizationRawValues QualityIQISummaryResponseMetaNormalization = "RAW_VALUES"`
+
+      - `const QualityIQISummaryResponseMetaNormalizationPercentageChange QualityIQISummaryResponseMetaNormalization = "PERCENTAGE_CHANGE"`
+
+      - `const QualityIQISummaryResponseMetaNormalizationRollingAverage QualityIQISummaryResponseMetaNormalization = "ROLLING_AVERAGE"`
+
+      - `const QualityIQISummaryResponseMetaNormalizationOverlappedPercentage QualityIQISummaryResponseMetaNormalization = "OVERLAPPED_PERCENTAGE"`
+
+      - `const QualityIQISummaryResponseMetaNormalizationRatio QualityIQISummaryResponseMetaNormalization = "RATIO"`
+
+    - `Units []QualityIQISummaryResponseMetaUnit`
+
+      Measurement units for the results.
+
+      - `Name string`
+
+      - `Value string`
+
+  - `Summary0 QualityIQISummaryResponseSummary0`
+
+    - `P25 string`
+
+    - `P50 string`
+
+    - `P75 string`
+
+### Example
+
+```go
+package main
+
+import (
+  "context"
+  "fmt"
+
+  "github.com/cloudflare/cloudflare-go"
+  "github.com/cloudflare/cloudflare-go/option"
+  "github.com/cloudflare/cloudflare-go/radar"
+)
+
+func main() {
+  client := cloudflare.NewClient(
+    option.WithAPIToken("Sn3lZJTBX6kkg7OdcBUAxOO963GEIyGQqnFTOFYY"),
+  )
+  response, err := client.Radar.Quality.IQI.Summary(context.TODO(), radar.QualityIQISummaryParams{
+    Metric: cloudflare.F(radar.QualityIQISummaryParamsMetricBandwidth),
+  })
+  if err != nil {
+    panic(err.Error())
+  }
+  fmt.Printf("%+v\n", response.Meta)
+}
+```
+
+#### Response
+
+```json
+{
+  "result": {
+    "meta": {
+      "confidenceInfo": {
+        "annotations": [
+          {
+            "dataSource": "ALL",
+            "description": "Cable cut in Tonga",
+            "endDate": "2019-12-27T18:11:19.117Z",
+            "eventType": "EVENT",
+            "isInstantaneous": true,
+            "linkedUrl": "https://example.com",
+            "startDate": "2019-12-27T18:11:19.117Z",
+            "tags": [
+              "BOT_CLASS"
+            ]
+          }
+        ],
+        "level": 0
+      },
+      "dateRange": [
+        {
+          "endTime": "2022-09-17T10:22:57.555Z",
+          "startTime": "2022-09-16T10:22:57.555Z"
+        }
+      ],
+      "lastUpdated": "2019-12-27T18:11:19.117Z",
+      "normalization": "PERCENTAGE",
+      "units": [
+        {
+          "name": "*",
+          "value": "requests"
+        }
+      ]
+    },
+    "summary_0": {
+      "p25": "32.20938",
+      "p50": "61.819881",
+      "p75": "133.813087"
+    }
+  },
+  "success": true
+}
+```
 # quickstart-android
 * GCX++++
 
