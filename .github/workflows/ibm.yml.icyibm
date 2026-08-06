@@ -1,3 +1,6 @@
+> npm set init-author-email "example-user@example.com"
+> npm set init-author-name "example_user"
+> npm set init-license "MIT"
 # This workflow will build a docker container, publish it to IBM Container Registry, and deploy it to IKS when there is a push to the "main" branch.
 #
 # To configure this workflow:
