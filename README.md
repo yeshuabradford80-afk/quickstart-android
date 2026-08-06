@@ -1,3 +1,125 @@
+Skip to content
+
+Cloudflare API
+
+
+API Reference
+
+Copy Markdown
+
+AI
+Execute AI model
+POST
+/accounts/{account_id}/ai/run/{model_name}
+Models
+AIRunResponse = array of object or string or object or 12 more
+An array of classification results for the input text
+
+AIFinetunes
+List Finetunes
+GET
+/accounts/{account_id}/ai/finetunes
+Create a new Finetune
+POST
+/accounts/{account_id}/ai/finetunes
+Models
+FinetuneListResponse
+id: string
+formatuuid
+created_at: string
+formatdate-time
+model: string
+modified_at: string
+formatdate-time
+name: string
+description: optional string
+FinetuneCreateResponse
+id: string
+formatuuid
+created_at: string
+formatdate-time
+model: string
+modified_at: string
+formatdate-time
+name: string
+public: boolean
+description: optional string
+AIFinetunesAssets
+Upload a Finetune Asset
+POST
+/accounts/{account_id}/ai/finetunes/{finetune_id}/finetune-assets
+Models
+AssetCreateResponse
+success: boolean
+AIFinetunesPublic
+List Public Finetunes
+GET
+/accounts/{account_id}/ai/finetunes/public
+Models
+PublicListResponse
+id: string
+formatuuid
+created_at: string
+formatdate-time
+model: string
+modified_at: string
+formatdate-time
+name: string
+public: boolean
+description: optional string
+AIAuthors
+Author Search
+GET
+/accounts/{account_id}/ai/authors/search
+Models
+AuthorListResponse = unknown
+AITasks
+Task Search
+GET
+/accounts/{account_id}/ai/tasks/search
+Models
+TaskListResponse = unknown
+AIModels
+Model Search
+GET
+/accounts/{account_id}/ai/models/search
+Models
+ModelListResponse = unknown
+AIModelsSchema
+Get Model Schema
+GET
+/accounts/{account_id}/ai/models/schema
+Models
+SchemaGetResponse
+input: object
+additionalProperties: boolean
+description: string
+type: string
+output: object
+additionalProperties: boolean
+description: string
+type: string
+AITo Markdown
+Convert Files into Markdown
+POST
+/accounts/{account_id}/ai/tomarkdown
+Get all converted formats supported
+GET
+/accounts/{account_id}/ai/tomarkdown/supported
+Models
+ToMarkdownTransformResponse
+data: string
+format: string
+mimeType: string
+name: string
+tokens: string
+ToMarkdownSupportedResponse
+extension: string
+mimeType: string
+Previous
+Value
+Next
+Finetunes
 ## Get Internet Quality Index (IQI) summary
 
 `client.Radar.Quality.IQI.Summary(ctx, query) (*QualityIQISummaryResponse, error)`
