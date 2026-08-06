@@ -1,3 +1,154 @@
+Skip to content
+
+Cloudflare API
+
+
+API Reference
+Radar
+Quality
+IQI
+
+Copy Markdown
+
+Get Internet Quality Index (IQI) summary
+GET
+/radar/quality/iqi/summary
+Retrieves a summary (percentiles) of bandwidth, latency, or DNS response time from the Radar Internet Quality Index (IQI).
+
+Security
+API Token
+The preferred authorization scheme for interacting with the Cloudflare API. Create a token.
+
+Example:
+Authorization: Bearer Sn3lZJTBX6kkg7OdcBUAxOO963GEIyGQqnFTOFYY
+API Email + API Key
+The previous authorization scheme for interacting with the Cloudflare API, used in conjunction with a Global API key.
+
+Example:
+X-Auth-Email: user@example.com
+The previous authorization scheme for interacting with the Cloudflare API. When possible, use API tokens instead of Global API keys.
+
+Example:
+X-Auth-Key: 144c9defac04969c7bfad8efaa8ea194
+Accepted Permissions (at least one required)
+User Details Write
+User Details Read
+Query Parameters
+metric: "BANDWIDTH" or "DNS" or "LATENCY"
+Defines which metric to return (bandwidth, latency, or DNS response time).
+
+asn: optional array of string
+Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with - to exclude ASNs from results. For example, -174, 3356 excludes results from AS174, but includes results from AS3356.
+
+continent: optional array of string
+Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with - to exclude continents from results. For example, -EU,NA excludes results from EU, but includes results from NA.
+
+dateEnd: optional array of string
+End of the date range (inclusive). Alternative to dateRange; provide together with dateStart. When requesting comparison series, every series must resolve to the same duration as the main series. Each dateStart/dateEnd is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.
+
+dateRange: optional array of string
+Filters results by relative date range ending at the current time, with each value producing a separate series. Use <n>d for days (up to 364d) or <n>w for weeks (up to 52w). Append control to request the equivalent previous period for comparison: the comparison window is shifted back by the current window’s length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. 7dcontrol covers days -14 to -7, 10dcontrol covers days -24 to -14). For example, pass 7d and 7dcontrol to compare this week with the previous week. All series must resolve to the same duration as the main series; relative ranges (including control) satisfy this automatically. Use this parameter or set specific start and end dates (dateStart and dateEnd parameters).
+
+dateStart: optional array of string
+Start of the date range. Alternative to dateRange; provide together with dateEnd. When requesting comparison series, every series must resolve to the same duration as the main series. Each dateStart/dateEnd is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.
+
+format: optional "JSON" or "CSV"
+Format in which results will be returned.
+
+location: optional array of string
+Filters results by location. Specify a comma-separated list of alpha-2 codes. Prefix with - to exclude locations from results. For example, -US,PT excludes results from the US, but includes results from PT.
+
+name: optional array of string
+Array of names used to label the series in the response.
+
+Returns
+result: object
+meta: object
+Metadata for the results.
+
+confidenceInfo: object
+annotations: array of { dataSource, description, endDate, 5 more }
+level: number
+Provides an indication of how much confidence Cloudflare has in the data.
+
+dateRange: array of object
+endTime: string
+Adjusted end of date range.
+
+formatdate-time
+startTime: string
+Adjusted start of date range.
+
+formatdate-time
+lastUpdated: string
+Timestamp of the last dataset update.
+
+formatdate-time
+normalization: "PERCENTAGE" or "MIN0_MAX" or "MIN_MAX" or 5 more
+Normalization method applied to the results. Refer to Normalization methods.
+
+units: array of object
+Measurement units for the results.
+
+name: string
+value: string
+summary_0: object
+p25: string
+p50: string
+p75: string
+success: boolean
+Get Internet Quality Index (IQI) summary
+
+HTTP
+
+curl https://api.cloudflare.com/client/v4/radar/quality/iqi/summary \
+    -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN"
+Returns Examples
+200 example
+{
+  "result": {
+    "meta": {
+      "confidenceInfo": {
+        "annotations": [
+          {
+            "dataSource": "ALL",
+            "description": "Cable cut in Tonga",
+            "endDate": "2019-12-27T18:11:19.117Z",
+            "eventType": "EVENT",
+            "isInstantaneous": true,
+            "linkedUrl": "https://example.com",
+            "startDate": "2019-12-27T18:11:19.117Z",
+            "tags": [
+              "BOT_CLASS"
+            ]
+          }
+        ],
+        "level": 0
+      },
+      "dateRange": [
+        {
+          "endTime": "2022-09-17T10:22:57.555Z",
+          "startTime": "2022-09-16T10:22:57.555Z"
+        }
+      ],
+      "lastUpdated": "2019-12-27T18:11:19.117Z",
+      "normalization": "PERCENTAGE",
+      "units": [
+        {
+          "name": "*",
+          "value": "requests"
+        }
+      ]
+    },
+    "summary_0": {
+      "p25": "32.20938",
+      "p50": "61.819881",
+      "p75": "133.813087"
+    }
+  },
+  "success": true
+}
+
 # quickstart-android
 * GCX++++
 
