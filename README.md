@@ -1,5 +1,35 @@
 # quickstart-android
 * GCX++++
+Another Hello Word
+
+*("Hello,Christ")*
+
+[X = A-->EX]
+[X = B-->VX]
+[X = C-->AX]
+[X = D-->XX]
+[X = EL-o-hist-->OELX]
+[X = F-->KX]
+[X = G-->SX]
+[X = H-->HX]
+[X = I-->IX]
+[X = J-->UX]
+[X = K-->GX]
+[X = L-->TX]
+[X = M-->NX]
+[X = N-->MX]
+[X = O-->RX]
+[X = P-->WX]
+[X = Q-->JX]
+[X = R-->QX]
+[X = S-->DX]
+[X = T-->PX]
+[X = U-->LX]
+[X = V-->YX]
+[X = W-->FX]
+[X = X-->BX]
+[X = Y-->ZX]
+[X = Z-->CX]
 
 ```npm install ethereum-identity-kitnpm install ethereum-identity-kit wagmi viem@2.x @tanstack/react-queryimport { WagmiProvider } from 'wagmi'
 
