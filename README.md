@@ -2,8 +2,8 @@
 * GCX++++
 Another Hello Word
 
-## *("Hello,Christ")*
-
+ *("Hello,Christ")*
+```
 # •• [X = A-->EX]
 
 # •• [X = B-->VX]
