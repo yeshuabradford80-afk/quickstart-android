@@ -84,3 +84,21 @@ public class QuantumMechanicsOperators {
 }
 https://github.com/yeshuabradford80-afk/quickstart-android/issues/6#issue-5112440396
 import { ProfileCard } from 'ethereum-identity-kit'   export default function Home() {   return <ProfileCard addressOrName="vitalik.eth" />   // or 0x983110309620d911731ac0932219af06091b6744 }npm install ethereum-identity-kit wagmi viem@2.x @tanstack/react-query@Composable fun CashAppPayButton(   onClick: () -> Unit,   modifier: Modifier = Modifier,   style: CashAppPayButtonStyle = CashAppPayButtonStyle.Default,   enabled: Boolean = true, )<app.cash.paykit.ui.views.CashAppPayButton     style="@style/CAPButtonStyle.Default"     android:layout_height="48dp"     android:layout_marginTop="4dp"     android:layout_width="match_parent"     android:layout_marginHorizontal="8dp"     />
+<app.cash.paykit.ui.views.CashAppPayButton
+    style="@style/CAPButtonStyle.Default"
+    android:layout_height="48dp"
+    android:layout_marginTop="4dp"
+    android:layout_width="match_parent"
+    android:layout_marginHorizontal="8dp"
+    />@Composable
+fun CashAppPayButton(
+  onClick: () -> Unit,
+  modifier: Modifier = Modifier,
+  style: CashAppPayButtonStyle = CashAppPayButtonStyle.Default,
+  enabled: Boolean = true,
+)import { ProfileCard } from 'ethereum-identity-kit'
+ 
+export default function Home() {
+  return <ProfileCard addressOrName="vitalik.eth" />
+  // or 0x983110309620d911731ac0932219af06091b6744
+}
