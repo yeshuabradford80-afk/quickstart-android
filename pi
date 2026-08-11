@@ -1,0 +1,10 @@
+import os
+from cloudflare import Cloudflare
+
+client = Cloudflare(
+    api_token=os.environ.get("CLOUDFLARE_API_TOKEN"),  # This is the default and can be omitted
+)
+response = client.radar.quality.iqi.summary(
+    metric="BANDWIDTH",
+)
+print(response.meta)
