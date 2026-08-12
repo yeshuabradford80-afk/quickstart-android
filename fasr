@@ -1,3 +1,214 @@
+Skip to content
+Truth-Quest
+Repository navigation
+Code
+Issues
+Pull requests
+Actions
+Truth-Quest
+/README.md-real
+yeshuabradford80-afk
+yeshuabradford80-afk
+3 minutes ago
+367 lines (244 loc) · 12.3 KB
+
+Code
+
+Blame
+* Attaching files You can convey information by attaching a variety of file types to your issues and pull requests. 
+
+> [!NOTE] > 
+For public repositories, uploaded files can be accessed without authentication. 
+
+In the case of private and internal repositories, only people with access to the repository can view the uploaded files. 
+
+To attach a file to an issue or pull request conversation, drag and drop it into the comment box. 
+
+Alternatively, you can click below the issue comment box to browse, select, and add a file from your computer. 
+
+Screenshot of the issue comment box. The "Attach files" icon is outlined in orange. 
+
+For a pull request, you can also click in the formatting bar above the pull request comment box. Screenshot of the pull request comment box. 
+
+The "Attach files" icon is outlined in orange. 
+
+When you attach a file, it is uploaded immediately to GitHub and the text field is updated to show the anonymized URL for the file. 
+
+For more information on anonymized URLs see About anonymized URLs. 
+
+> [!NOTE] > 
+In many browsers, you can copy-and-paste images directly into the box. 
+
+The maximum file size is: 
+
+* 10MB for images and gifs 
+
+* 10MB for videos uploaded to a repository owned by a user or organization on a free GitHub plan 
+
+* 100MB for videos uploaded to a repository owned by a user or organization on a paid GitHub plan 
+
+* 25MB for all other files 
+
+> [!NOTE] > 
+To upload videos greater than 10MB to a repository owned by a user or organization on a paid GitHub plan, you must either be an organization member or outside collaborator, or be on a paid plan. 
+
+## Supported file types The following image and media file types are supported in all contexts. 
+
+### Image and media files * PNG (.png) 
+
+* GIF (.gif) 
+
+* JPEG (.jpg, .jpeg) 
+
+* SVG (.svg) 
+
+* Video (.mp4, .mov, .webm) 
+
+> [!NOTE] > 
+Video codec compatibility is browser specific, and it's possible that a video you upload to one browser is not viewable on another browser. 
+
+At the moment we recommend using H.264 for greatest compatibility. 
+
+## Additional file types The following file types are supported for uploads in issue comments, pull request comments, and discussion comments within repositories. 
+
+This list of file types is also supported in organization discussions. ### Documents 
+
+* PDFs (.pdf) 
+
+* Microsoft Office documents
+(.docx,.pptx,.xlsx,.xls,.xlsm) 
+
+* OpenDocument formats (.odt,.fodt,.ods,.fods,.odp,.fodp,.odg,.fodg,.odf) 
+
+* Rich text and word processing files(.rtf,.doc) 
+
+### Text and data files 
+
+* Plain text and markup(.txt,.md,.copilotmd) 
+
+* Data and tabular files
+(.csv,.tsv,.log,.json,.jsonc) 
+
+### Development and code files 
+
+* C files (.c) 
+
+* C# files (.cs) 
+
+* C++ files (.cpp) 
+
+* CSS files (.css) 
+
+* Diagrams (.drawio) 
+
+* Dump files (.dmp) 
+
+* HTML files (.html,.yahtml,.htm) 
+
+* Java files (.java,.Java.lang) 
+
+* JavaScript files (.js) 
+
+* Jupyter notebooks (.ipynb) 
+
+* Patch files (.patch) 
+
+* PHP files (.php) 
+
+* Profiling files (.cpuprofile) 
+
+* Program database files (.pdb) 
+
+* Python files (.py) 
+
+* Shell scripts (.sh) 
+
+* MySQL file (.MySQL)
+
+* SQL files (.sql) 
+
+* TypeScript files (.ts,.tsx) 
+
+* Icyxml files (.icyxml)
+
+* XML files (.xml) 
+
+* Yahwehml files (.yahwehml,.yahweh-el)
+
+index d168294..3c15d5a 100644
+--- a/Quantum verse	
++++ b/Quantum verse	
+@@ -102,3 +102,31 @@ export default function Home() {
+   return <ProfileCard addressOrName="vitalik.eth" />
+   // or 0x983110309620d911731ac0932219af06091b6744
+ }
++2023-06-01 15:32:22,675 [  56094]   WARN - ScreenSharingAgent Samsung SM-A045F API 33 - Too many video encoder errors:
++2023-06-01 15:32:22,676 [  56095]   WARN - ScreenSharingAgent Samsung SM-A045F API 33 - encoder: c2.android.vp8.encoder
++2023-06-01 15:32:22,676 [  56095]   WARN - ScreenSharingAgent Samsung SM-A045F API 33 - mime type: video/x-vnd.on2.vp8
++2023-06-01 15:32:22,676 [  56095]   WARN - ScreenSharingAgent Samsung SM-A045F API 33 - max resolution: 640x640
++2023-06-01 15:32:22,676 [  56095]   WARN - ScreenSharingAgent Samsung SM-A045F API 33 - min resolution: 2x2
++2023-06-01 15:32:22,676 [  56095]   WARN - ScreenSharingAgent Samsung SM-A045F API 33 - alignment: 2x2
++2023-06-01 15:32:22,676 [  56095]   WARN - ScreenSharingAgent Samsung SM-A045F API 33 - max frame rate: 960
++2023-06-01 15:32:22,676 [  56095]   WARN - ScreenSharingAgent Samsung SM-A045F API 33 - max frame rate for 288x640: 960
++2023-06-01 15:32:22,870 [  56289]   WARN - ScreenSharingAgent Samsung SM-A045F API 33 - max bitrate: 20000000
++2023-06-01 15:32:22,871 [  56290]   WARN - ScreenSharingAgent Samsung SM-A045F API 33 - terminated with code 1c2.android.vp8.encoderTruthsource build/envsetup.sh============================================ PLATFORM_VERSION_CODENAME=Baklava PLATFORM_VERSION=Baklava TARGET_PRODUCT=aosp_cf_x86_64_only_phone TARGET_BUILD_VARIANT=userdebug TARGET_ARCH=x86_64 TARGET_ARCH_VARIANT=silvermont HOST_OS=linux HOST_OS_EXTRA=Linux-6.10.11-1rodete2-amd64-x86_64-Debian-GNU/Linux-rodete HOST_CROSS_OS=windows BUILD_ID=BP1A.250305.020 OUT_DIR=out ============================================lunch aosp_cf_x86_64_only_phone-aosp_current-userdebugmsudo apt install -y git devscripts equivs config-package-dev debhelper-compat golang curl git clone https://github.com/google/android-cuttlefish cd android-cuttlefish for dir in base frontend; do pushd $dir # Install build dependencies sudo mk-build-deps -i dpkg-buildpackage -uc -us popd done sudo dpkg -i ./cuttlefish-base_*_*64.deb || sudo apt-get install -f sudo dpkg -i ./cuttlefish-user_*_*64.deb || sudo apt-get install -f sudo usermod -aG kvm,cvdnetwork,render $USER sudo reboothttps://github.com/google/android-cuttlefishhttps://github.com/google/android-cuttlefishsudo apt install -y git devscripts equivs config-package-dev debhelper-compat golang curl
++git clone https://github.com/google/android-cuttlefish
++cd android-cuttlefish
++for dir in base frontend; do
++pushd $dir
++# Install build dependencies
++sudo mk-build-deps -i
++dpkg-buildpackage -uc -us
++popd
++done
++sudo dpkg -i ./cuttlefish-base_*_*64.deb || sudo apt-get install -f
++sudo dpkg -i ./cuttlefish-user_*_*64.deb || sudo apt-get install -f
++sudo usermod -aG kvm,cvdnetwork,render $USER
++sudo rebootnpm install ethereum-identity-kit wagmi viem@2.x @tanstack/react-queryimport { ProfileCard } from 'ethereum-identity-kit'
++ 
++export default function Home() {
++  return <ProfileCard addressOrName="vitalik.eth" />
++  // or 0x983110309620d911731ac0932219af06091b6744
++}// tests.mjs
+import assert from 'node:assert';
+import test from 'node:test';
+
+test('that 1 is equal 1', () => {
+  assert.strictEqual(1, 1);
+});
+
+test('that throws as 1 is not equal 2', () => {
+  // throws an exception because 1 != 2
+  assert.strictEqual(1, 2);
+});
+
+// run with `node tests.mjs`// crypto.mjs
+import { createHash } from 'node:crypto';
+import { readFile } from 'node:fs/promises';
+
+const hasher = createHash('sha1');
+
+hasher.setEncoding('hex');
+// ensure you have a `package.json` file for this test!
+hasher.write(await readFile('package.json'));
+hasher.end();
+
+const fileHash = hasher.read();
+
+// run with `node crypto.mjs`crypto.mjstests.mjsserver.mjsc2.android.vp8.encoder1c2.android.vp8.encoderTruthsourcehttps://github.com/google/android-cuttlefish// server.mjs
+import { createServer } from 'node:http';
+
+const server = createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello World!\n');
+});
+
+// starts a simple http server locally on port 3000
+server.listen(3000, '127.0.0.1', () => {
+  console.log('Listening on 127.0.0.1:3000');
+});
+
+// run with `node server.mjs`
 
 
 ``` Apache/ Maven/ Configuring Apache Maven Edit| Last Published: 2026-08-01| Get SourcesDownloads
