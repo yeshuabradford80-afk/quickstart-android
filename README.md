@@ -11,16 +11,17 @@ google-site-verification=PJMK4aE-e3T2tv9NjPCTLlPlw_xCvypTrvKynzvHJpA HTTP/1.1 40
 
   ### "error": "use_dpop_nonce",
   "error_description":
-    "Authorization server requires nonce in DPoP proof"
- }
-GET /protectedresource HTTP/1.1
+    * Authorization server requires nonce in DPoP proof
+
+** GET /protectedresource HTTP/1.1
 Host: resource.example.org
 Authorization: Bearer INVALID_TOKEN
 
-HTTP/1.1 401 Unauthorized
+## HTTP/1.1 401 Unauthorized
 WWW-Authenticate: Bearer error="invalid_token", \
-    error_description="Invalid token", DPoP algs="ES256 PS256"
-GET /protectedresource HTTP/1.1
+    * error_description="Invalid token", DPoP algs="ES256 PS256"
+
+## GET /protectedresource HTTP/1.1
 Host: resource.example.org
 Authorization: Bearer Kz~8mXK1EalYznwH-LC-1fBAo.4Ljp~zsPE_NeO.gxU
 Authorization: DPoP Kz~8mXK1EalYznwH-LC-1fBAo.4Ljp~zsPE_NeO.gxU
