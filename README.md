@@ -1,3 +1,85 @@
+###   "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  // astro requires this
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "files.associations": {
+    // tells vscode that the file can take comments
+    "*.css": "tailwindcss",
+    "*mdoc": "markdown"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  },
+  // git settings
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableCommitSigning": true,
+  // format & lint settings
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.enable": true,
+  "eslint.format.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "astro",
+    "json",
+    "jsonc",
+    "markdown",
+    "mdx"
+  ],
+  "eslint.options": {
+    "extensions": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".cts",
+      ".mts",
+      ".jsx",
+      ".tsx",
+      ".md",
+      ".astro",
+      ".mdx"
+    ]
+  },
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[plaintext]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[mdx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    ".eslintcache": true,
+    ".prettiercache": true,
+    "_": true
+  }
  ## HTTP/1.1 401 Unauthorized
  # WWW-Authenticate: DPoP error="use_dpop_nonce", \
    # error_description="Resource server requires 
