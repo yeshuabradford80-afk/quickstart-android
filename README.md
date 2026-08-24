@@ -1,7 +1,8 @@
- HTTP/1.1 401 Unauthorized
- WWW-Authenticate: DPoP error="use_dpop_nonce", \
-   error_description="Resource server requires nonce in DPoP proof"
- DPoP-Nonce: eyJ7S_zG.eyJH0-Z.HX4w-7v
+ ## HTTP/1.1 401 Unauthorized
+ # WWW-Authenticate: DPoP error="use_dpop_nonce", \
+   # error_description="Resource server requires 
+## nonce in DPoP proof"
+ ## DPoP-Nonce: eyJ7S_zG.eyJH0-Z.HX4w-7v
  HTTP/1.1 200 OK
  Cache-Control: no-store
  DPoP-Nonce: eyJ7S_zG.eyJbYu3.xQmBj-1
