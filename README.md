@@ -1,3 +1,44 @@
+ HTTP/1.1 401 Unauthorized
+ WWW-Authenticate: DPoP error="use_dpop_nonce", \
+   error_description="Resource server requires nonce in DPoP proof"
+ DPoP-Nonce: eyJ7S_zG.eyJH0-Z.HX4w-7v
+ HTTP/1.1 200 OK
+ Cache-Control: no-store
+ DPoP-Nonce: eyJ7S_zG.eyJbYu3.xQmBj-1
+google-site-verification=PJMK4aE-e3T2tv9NjPCTLlPlw_xCvypTrvKynzvHJpA HTTP/1.1 400 Bad Request
+ DPoP-Nonce: eyJ7S_zG.eyJH0-Z.HX4w-7v
+
+ {
+  "error": "use_dpop_nonce",
+  "error_description":
+    "Authorization server requires nonce in DPoP proof"
+ }
+GET /protectedresource HTTP/1.1
+Host: resource.example.org
+Authorization: Bearer INVALID_TOKEN
+
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Bearer error="invalid_token", \
+    error_description="Invalid token", DPoP algs="ES256 PS256"
+GET /protectedresource HTTP/1.1
+Host: resource.example.org
+Authorization: Bearer Kz~8mXK1EalYznwH-LC-1fBAo.4Ljp~zsPE_NeO.gxU
+Authorization: DPoP Kz~8mXK1EalYznwH-LC-1fBAo.4Ljp~zsPE_NeO.gxU
+
+HTTP/1.1 400 Bad Request
+WWW-Authenticate: Bearer error="invalid_request", \
+ error_description="Multiple methods used to include access token", \
+ DPoP algs="ES256 PS256", error="invalid_request", \
+ error_description="Multiple methods used to include access token"
+ {
+  "jti": "-BwC3ESc6acc2lTc",
+  "htm": "POST",
+  "htu": "https://server.example.com/token",
+  "iat": 1562262616,
+  "nonce": "eyJ7S_zG.eyJH0-Z.HX4w-7v"
+ }
+
+
 ## Skip to content
 
 ## Cloudflare API
